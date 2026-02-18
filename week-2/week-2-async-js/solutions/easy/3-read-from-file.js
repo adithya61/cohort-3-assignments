@@ -1,7 +1,9 @@
 const fs = require('fs');
 
+let file = '/Users/zonic/Downloads/cohort 3.0/week 2/Assignments/assignments/week-2/week-2-async-js/solutions/easy/example.txt';
+
 // Function to read a file asynchronously
-fs.readFile('example.txt', 'utf8', (err, data) => {
+fs.readFile(file, 'utf8', (err, data) => {
   if (err) {
     if (err.code === 'ENOENT') {
       console.error('Error: File not found!');
@@ -22,5 +24,5 @@ const expensiveOperation = () => {
   console.log('Expensive operation done');
 };
 
-
 expensiveOperation();
+ 
