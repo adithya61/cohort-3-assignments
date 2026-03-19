@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    Todo APP
+    <div>
+      <input id="todo" type="text" />
+      <button onclick="addTodo()">Add Todo</button>
+    </div>
+    <div id="listTodos"></div>
+  </body>
+  <script>
+    let btn = document.querySelector("#add");
+    let todos = [];
+
+    function addTodo() {
+      todos.push({
+        title: document.querySelector("#todo").value,
+      });
+      document.querySelector("#todo").value = "";
+      render(todos);
+    }
+
+    // Remove Todo
+    function removeTodo(idx) {
+      let newTodos = todos.filter((todo, i) => i != idx);
+      todos = newTodos;
+      render(todos);
+    }
+
+    // Render function
+    function render(todos) {
+      let listTodos = document.querySelector("#listTodos");
+
+      listTodos.innerHTML = "";
+
+      let counter = 0;
+      for (const todo of todos) {
+        let element = document.createElement("div");
+        element.textContent = todo["title"];
+
+        let btn = document.createElement("button");
+        btn.textContent = "delete";
+        btn.style.cursor = "pointer";
+        btn.style.marginLeft = "10px";
+        btn.addEventListener("click", (e) => {
+          removeTodo(e.target.id);
+        });
+        btn.id = counter++;
+        element.appendChild(btn);
+        listTodos.appendChild(element);
+      }
+    }
+  </script>
+</html>

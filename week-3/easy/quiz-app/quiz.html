@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quiz App</title>
+    <style>
+      html,
+      body {
+        height: 100vh;
+        margin: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .container {
+        text-align: center;
+        display: flex;
+        width: 25vw;
+        flex-direction: column;
+        justify-content: center;
+        border: 1px solid black;
+        padding: 29px;
+        border-radius: 5%;
+      }
+      #question {
+        margin-bottom: 14px;
+      }
+      #options * {
+        margin-top: 8px;
+        margin-bottom: 8px;
+        padding: 5px;
+        border: 1px solid black;
+        cursor: pointer;
+      }
+
+      #options :hover {
+        background: rgb(224, 224, 224);
+      }
+
+      #submitButton {
+        margin-top: 14px;
+        background: navy;
+        cursor: pointer;
+        padding: 12px;
+        border-radius: 5%;
+        color: white;
+        border: none;
+      }
+    </style>
+  </head>
+  <body style="width: 100%; height: 100%">
+    <div class="container">
+      <div id="question">Question</div>
+      <div id="options">
+        <div id="a">option1</div>
+        <div id="b">option2</div>
+        <div id="c">option3</div>
+        <div id="d">option4</div>
+      </div>
+      <button id="submitButton">Submit</button>
+    </div>
+  </body>
+  <script type="module">
+    // Script start
+
+    import { quizData } from "./data.js";
+
+    let curQuestion = 0,
+      correctAnswers = 0,
+      selectedOption = "";
+
+    let container = document.querySelector(".container");
+
+    let question = document.querySelector("#question");
+
+    let options = document.querySelector("#options");
+
+    let option1 = document.querySelector("#a");
+    let option2 = document.querySelector("#b");
+    let option3 = document.querySelector("#c");
+    let option4 = document.querySelector("#d");
+
+    let submitBtn = document.querySelector("#submitButton");
+
+    options.addEventListener("click", (e) => {
+      let child = e.target;
+      selectedOption = child.id;
+      child.style.background = "skyblue";
+    });
+
+    // move to next Question
+    function nextQuestion() {
+      if (curQuestion >= quizData.length) return;
+
+      let questionData = quizData[curQuestion];
+
+      question.textContent = questionData.question;
+
+      option1.textContent = questionData.a;
+      option2.textContent = questionData.b;
+      option3.textContent = questionData.c;
+      option4.textContent = questionData.d;
+    }
+
+    // After hitting submit button.
+    function submit() {
+      if (selectedOption == "") {
+        alert("select an option");
+        return;
+      }
+      let questionData = quizData[curQuestion];
+
+      if (questionData.correct == selectedOption) correctAnswers++;
+
+      let optionsCollection = options.getElementsByTagName("*");
+      Array.from(optionsCollection).forEach((element) => {
+        element.style.background = "";
+      });
+
+      selectedOption = "";
+      curQuestion++;
+      if (curQuestion == quizData.length) {
+        container.textContent = `You have answered ${correctAnswers}/4 Questions correctely ✅`;
+        return;
+      }
+      nextQuestion();
+    }
+
+    submitBtn.addEventListener("click", () => {
+      submit();
+    });
+
+    nextQuestion();
+  </script>
+</html>
