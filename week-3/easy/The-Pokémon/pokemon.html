@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pokemon</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div id="container">
+      <div id="navbar">
+        <img src="./assets/images/image.png" alt="pokeball" />
+        <span id="brandName">PokeDex</span>
+      </div>
+      <div id="main" class="flex">
+        <div id="selection">
+          <!-- number of card select -->
+          <div id="cardSelect" class="flex">
+            <label for="numberCards" id="cardSelectLabel">CARD COUNT</label>
+            <select name="numberCards" id="numberCards">
+              <option value="10">10</option>
+              <option value="20">20</option>
+              <option value="30">30</option>
+              <option value="50">50</option>
+            </select>
+          </div>
+          <!-- category select -->
+          <div id="categorySelect" class="flex">
+            <label for="category" id="categoryLabel">CATEGORY</label>
+            <select name="category" id="category"></select>
+          </div>
+          <div id="generateCollection">GENERATE COLLECTION</div>
+        </div>
+      </div>
+
+      <!-- card collection -->
+      <div id="collection">
+        <!-- <div class="collectionCard">
+          <div class="name">pikachu</div>
+          <div class="type">Electric</div>
+          <img src="https://picsum.photos/200/300" alt="pokemon image" />
+        </div> -->
+      </div>
+    </div>
+  </body>
+  <script src="script.js" defer></script>
+</html>

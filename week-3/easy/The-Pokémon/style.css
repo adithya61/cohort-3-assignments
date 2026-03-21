@@ -1,0 +1,157 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  width: 100vw;
+  background-color: #ffedea;
+  letter-spacing: 0.05rem;
+}
+
+.flex {
+  display: flex;
+}
+
+#navbar {
+  height: fit-content;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+#navbar img {
+  height: 8vh;
+  padding: 24px;
+}
+
+#brandName {
+  font-family: "Courier New", Courier, monospace;
+  font-weight: bolder;
+  font-size: xx-large;
+}
+
+select {
+  cursor: pointer;
+}
+
+/* body */
+
+#selection {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  margin: 35px 35px 0px 35px;
+  border-radius: 1.5rem;
+  background-color: #ffdad4;
+  width: 100vw;
+  padding: 1.5rem;
+}
+
+/* number of cards */
+
+#cardSelect {
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+  gap: 1rem;
+}
+
+#cardSelectLabel {
+  color: #a52a2a;
+  font-weight: bold;
+}
+
+#numberCards {
+  border: none;
+  padding: 1rem;
+  border-radius: 0.5rem;
+}
+
+/* category */
+
+#categorySelect {
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+  gap: 1rem;
+  padding: 1.75rem;
+}
+
+#categoryLabel {
+  color: #a52a2a;
+  font-weight: bold;
+}
+
+#category {
+  border: none;
+  padding: 1rem;
+  border-radius: 0.5rem;
+}
+
+/* Generate button */
+
+#generateCollection {
+  color: white;
+  background: linear-gradient(135deg, #bb0100 0%, #ff7763 100%);
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 700;
+  font-size: large;
+  white-space: nowrap;
+  padding: 1.25rem;
+  border-radius: 2rem;
+  cursor: pointer;
+  text-align: center;
+  width: 80%;
+}
+
+/* Collection  */
+
+#collection {
+  background-color: #ffdad4;
+  display: grid;
+  grid-template-rows: repeat(auto, auto);
+  grid-template-columns: repeat(4, auto);
+  gap: 2rem;
+  border-radius: 1.5rem;
+  margin: 35px;
+  height: fit-content;
+  padding: 2rem;
+  color: brown;
+  font-weight: 700;
+}
+
+.collectionCard {
+  height: 377px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  background-color: antiquewhite;
+  border-radius: 1.25rem;
+  padding: 1.25rem;
+}
+
+#collection img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  background-color: white;
+  border-radius: 5%;
+}
+
+.name {
+  font-size: 2.25rem;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+  font-family: "Courier New", Courier, monospace;
+}
+
+.type {
+  font-size: 1.1rem;
+  font-weight: bold;
+  margin-bottom: 0.75rem;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
