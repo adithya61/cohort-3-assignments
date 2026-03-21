@@ -146,7 +146,9 @@ select {
   font-size: 2.25rem;
   margin-bottom: 0.5rem;
   font-weight: bold;
-  font-family: "Courier New", Courier, monospace;
+  font-family:
+    "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
 }
 
 .type {
@@ -154,4 +156,8 @@ select {
   font-weight: bold;
   margin-bottom: 0.75rem;
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  background-color: rgb(238, 207, 166);
+  letter-spacing: 5px;
+  border-radius: 0.4rem;
+  padding: 6px;
 }

@@ -70,8 +70,10 @@ async function getPokemons(numberOfCards, categoryName) {
     let tempTypes = "";
     for (const type of res["types"]) {
       tempTypes += type.type.name;
-      res["types"].length > 1 ? (tempTypes += "/") : null;
+      res["types"].length > 1 ? (tempTypes += " / ") : null;
     }
+
+    res["types"].length > 1 ? (tempTypes = tempTypes.slice(0, -2)) : null;
 
     collection.push({
       name: res["name"],
