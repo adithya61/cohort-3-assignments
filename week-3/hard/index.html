@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Taskify</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="./script.js" defer></script>
+  </head>
+  <body>
+    <div id="container">
+      <!-- T_odo -->
+      <div
+        id="todoSection"
+        class="card"
+        ondragover="dragOverHandler(event)"
+        ondrop="dropHandler(event)"
+      >
+        <div class="category">Todo</div>
+        <div
+          id="todo1"
+          draggable="true"
+          ondragstart="dragStartHandler(event)"
+          class="todo"
+        >
+          <div class="head">Hit the gym</div>
+          <div class="desc">Cardio Today 10 reps</div>
+        </div>
+        <div class="addButton" id="addTodo">Add New +</div>
+      </div>
+      <!-- In progress -->
+      <div
+        id="progressSection"
+        ondragover="dragOverHandler(event)"
+        ondrop="dropHandler(event)"
+        class="card"
+      >
+        <div class="category">In progress</div>
+        <div
+          id="todo2"
+          draggable="true"
+          ondragstart="dragStartHandler(event)"
+          class="todo"
+        >
+          <div class="head">Meditate</div>
+          <div class="desc">Meditate for 10 minutes</div>
+        </div>
+        <div class="addButton" id="addProgress">Add New +</div>
+      </div>
+      <!-- Under Review -->
+      <div
+        id="reviewSection"
+        ondragover="dragOverHandler(event)"
+        ondrop="dropHandler(event)"
+        class="card"
+      >
+        <div class="category">Under Review</div>
+        <div
+          id="todo3"
+          draggable="true"
+          ondragstart="dragStartHandler(event)"
+          class="todo"
+        >
+          <div class="head">Drink Water</div>
+          <div class="desc">Drink atleast 2 litres of water.</div>
+        </div>
+        <div class="addButton" id="addReview">Add New +</div>
+      </div>
+      <!-- Finished -->
+      <div
+        id="finishedSection"
+        ondragover="dragOverHandler(event)"
+        ondrop="dropHandler(event)"
+        class="card"
+      >
+        <div class="category">Finished</div>
+        <div
+          id="todo4"
+          draggable="true"
+          ondragstart="dragStartHandler(event)"
+          class="todo"
+        >
+          <div class="head">Learn Spanish</div>
+          <div class="desc">learn spanish from duolingo app.</div>
+        </div>
+        <div class="addButton" id="addFinished">Add New +</div>
+      </div>
+    </div>
+  </body>
+</html>

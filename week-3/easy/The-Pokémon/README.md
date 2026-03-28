@@ -7,7 +7,7 @@ Your task is to design and implement an application that display Pokémon Cards.
 
 **Hint**: take category and no of Pokémon, use API and render.
 
-## Resources:
+## Resources:w
 
 - refer this: https://pokeapi.co/
 - use this `https://pokeapi.co/api/v2/pokemon/${id}` api to get the pokemon data by id.

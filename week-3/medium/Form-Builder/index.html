@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form Budiler</title>
+    <style>
+      body {
+        padding: 1rem;
+        height: 100vh;
+        display: flex;
+        gap: 1rem;
+        background-color: blanchedalmond;
+        align-items: center;
+      }
+
+      #formContainer {
+        width: 50%;
+        background-color: white;
+        padding: 1rem;
+        border-radius: 1rem;
+      }
+      #preview {
+        width: 50%;
+        background-color: white;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        border-radius: 1rem;
+        padding: 1rem;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="formContainer">
+      <div id="heading" style="font-size: xx-large">Form Builder</div>
+      <div style="font-size: larger; margin-bottom: 0.5rem">
+        Input field type
+      </div>
+      <div id="input">
+        <select
+          style="
+            width: 100%;
+            margin-bottom: 1rem;
+            background-color: rgb(235, 227, 227);
+          "
+          name="selectField"
+          id="selectField"
+        >
+          <option value="text">text</option>
+          <option value="radio">radio</option>
+          <option value="checkbox">checkbox</option>
+        </select>
+      </div>
+      <div></div>
+      <div style="font-size: larger; margin-bottom: 0.5rem">
+        Enter Field label
+      </div>
+      <input id="fieldLabel" style="margin-bottom: 1rem" type="text" />
+      <div
+        id="addButton"
+        style="
+          cursor: pointer;
+          background-color: skyblue;
+          width: 100%;
+          text-align: center;
+        "
+      >
+        Add Field
+      </div>
+    </div>
+    <div id="preview"></div>
+  </body>
+  <script src="./script.js"></script>
+</html>
