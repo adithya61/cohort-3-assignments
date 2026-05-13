@@ -15,11 +15,13 @@ const countRequests = (req, res, next) => {
   next();
 };
 
-app.get("/user", countRequests, function (req, res) {
+app.use(countRequests);
+
+app.get("/user", function (req, res) {
   res.status(200).json({ name: "john" });
 });
 
-app.post("/user", countRequests, function (req, res) {
+app.post("/user", function (req, res) {
   res.status(200).json({ msg: "created dummy user" });
 });
 
